@@ -1,0 +1,8 @@
+torch>=2.0.0
+transformers>=4.30.0
+Pillow>=9.0.0
+pandas>=1.5.0
+faiss-cpu==1.7.4   # if this fails on your environment, try 'faiss-cpu' without version or follow platform-specific install
+tqdm>=4.64.0
+numpy>=1.24.0
+
