@@ -1,16 +1,17 @@
-# Setup Instructions
+# 🛠️ Project Setup Guide — Visual Product Matcher
 
-Below are the steps I followed to setup the local dev environment:
+This document tracks the environment and dependency setup for the project.  
+It ensures consistency between local development, testing, and deployment.
 
-**Python side**
-- Created virtual environment (venv)  
-- Activated it  
-- Upgraded pip  
-- Installed required packages (will list in later commit)  
+---
 
-**Node / Frontend side**
-- Initialized project with `npm init`  
-- Installed any other dependencies (to be added later)  
+## 📦 1. Python Environment (Backend / AI)
+**Purpose:** Used for image processing, embeddings, and API.
 
-**Other tools**
-- yet to add 
+**Recommended Python version:** 3.10 or higher  
+
+**Steps (for local setup)**
+1. Create and activate a virtual environment:
+   ```bash
+   python -m venv venv
+   source venv/bin/activate   # Windows: venv\Scripts\activate
