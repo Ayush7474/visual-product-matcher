@@ -1,0 +1,6 @@
+id,name,category,price,image_url,local_path,description
+1,Blue Cotton T-Shirt,Clothing,14.99,https://images.unsplash.com/photo-1503342217505-b0a15ec3261c,data/images/1.jpg,Lightweight cotton tee ideal for summer wear.
+2,Red Sports Sneakers,Footwear,59.99,https://images.unsplash.com/photo-1606813909027-1b866b9a0e2f,data/images/2.jpg,Breathable running shoes with rubber sole.
+3,Leather Handbag,Accessories,89.99,https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f,data/images/3.jpg,Classic brown leather handbag with adjustable strap.
+4,Black Smartwatch,Electronics,129.99,https://images.unsplash.com/photo-1519744792095-2f2205e87b6f,data/images/4.jpg,Touchscreen smartwatch with fitness tracking.
+5,Silver Laptop,Electronics,799.99,https://images.unsplash.com/photo-1517336714731-489689fd1ca8,data/images/5.jpg,Lightweight aluminum laptop with 13-inch display.
