@@ -1,7 +1,7 @@
 # backend/app_streamlit.py
 
 import streamlit as st
-import pandas as pd  # <--- THIS WAS THE MISSING LINE. MY APOLOGIES.
+import pandas as pd
 from PIL import Image
 import numpy as np
 import faiss
@@ -106,7 +106,8 @@ if st.button("🔍 Search"):
         st.stop()
 
     st.subheader("Query Image:")
-    st.image(query_image, use_container_width=True)
+    # --- THIS IS THE FIX: Set a fixed width for the query image ---
+    st.image(query_image, width=200)
 
     query_vector = _compute_embedding(query_image, model, processor)
     indices, scores = _search_index(query_vector, index, top_k=top_k)
