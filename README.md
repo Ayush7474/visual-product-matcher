@@ -1,8 +1,10 @@
-# Visual Product Matcher
+# 🖼️ Visual Product Matcher
 
-A system that matches product images using visual similarity (AI + deep learning).
+A visual search app that finds visually similar products using CLIP embeddings.
 
-## Setup status
-✅ Repo initialized  
-⏳ Environment setup (next)  
-⏳ Data collection (coming soon)
+## 🧰 Setup
+```bash
+git clone https://github.com/Ayush7474/visual-product-matcher.git
+cd visual-product-matcher
+pip install -r requirements.txt
+python backend/main.py
