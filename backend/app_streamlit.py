@@ -1,19 +1,89 @@
+# backend/app_streamlit.py
+
 import streamlit as st
-import requests
-import os
 from PIL import Image
+import numpy as np
+import faiss
+import torch
+from transformers import CLIPProcessor, CLIPModel
+import os
+import json
+import requests
 import io
 
-# Backend URL (your local FastAPI server or Render deployment)
-BACKEND_URL = "http://127.0.0.1:8000/search"  # change later if deployed
+# --- START: All-in-One Configuration ---
+
+# Build paths relative to this script's location
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+EMBEDDINGS_DIR = os.path.join(SCRIPT_DIR, 'embeddings_output')
+
+# Define file paths for the model and metadata
+METADATA_PATH = os.path.join(EMBEDDINGS_DIR, 'products_metadata.json')
+FAISS_INDEX_PATH = os.path.join(EMBEDDINGS_DIR, 'index.faiss')
+
+# Model and device configuration
+CLIP_MODEL_NAME = "openai/clip-vit-base-patch32"
+DEVICE = "cpu" # Force CPU; Streamlit Cloud's free tier has no GPU
+
+# --- END: Configuration ---
+
+
+# --- START: Backend Logic (Merged from main.py) ---
+
+@st.cache_resource
+def load_models_and_data():
+    """Load all necessary models and data into memory once."""
+    st.write("Loading models and data... This may take a moment on first run.")
+    
+    if not os.path.exists(FAISS_INDEX_PATH) or not os.path.exists(METADATA_PATH):
+        raise FileNotFoundError("Could not find index or metadata files in 'backend/embeddings_output'.")
+
+    index = faiss.read_index(FAISS_INDEX_PATH)
+    
+    with open(METADATA_PATH, "r", encoding="utf-8") as f:
+        metadata = json.load(f)
+        
+    model = CLIPModel.from_pretrained(CLIP_MODEL_NAME).to(DEVICE)
+    processor = CLIPProcessor.from_pretrained(CLIP_MODEL_NAME)
+    model.eval()
+    
+    return index, metadata, model, processor
+
+def _image_from_bytes(data: bytes) -> Image.Image:
+    """Creates a PIL Image from bytes."""
+    return Image.open(io.BytesIO(data)).convert("RGB")
+
+def _compute_embedding(img: Image.Image, model, processor) -> np.ndarray:
+    """Computes a normalized embedding for the image."""
+    inputs = processor(images=[img], return_tensors="pt").to(DEVICE)
+    with torch.no_grad():
+        feat = model.get_image_features(**inputs)
+        feat = feat / feat.norm(p=2, dim=-1, keepdim=True)
+    return feat.cpu().numpy().astype("float32")
+
+def _search_index(vec: np.ndarray, index, top_k: int):
+    """Searches the FAISS index."""
+    distances, indices = index.search(vec, top_k)
+    return indices[0].tolist(), distances[0].tolist()
+
+# --- END: Backend Logic ---
+
+
+# --- START: Streamlit UI ---
 
 st.set_page_config(page_title="Visual Product Matcher", layout="wide")
-
 st.title("🖼️ Visual Product Matcher")
 st.write("Upload a product image or paste an image URL to find visually similar items.")
 
-col1, col2 = st.columns(2)
+# Load models and data at the start
+try:
+    index, metadata, model, processor = load_models_and_data()
+except Exception as e:
+    st.error(f"Fatal Error: Could not load necessary model files. Please check the logs.")
+    st.error(e)
+    st.stop()
 
+col1, col2 = st.columns(2)
 with col1:
     uploaded_file = st.file_uploader("Upload an image", type=["jpg", "jpeg", "png"])
 with col2:
@@ -22,25 +92,53 @@ with col2:
 top_k = st.slider("Number of similar results", 3, 10, 5)
 
 if st.button("🔍 Search"):
-    if uploaded_file:
-        files = {"file": uploaded_file.getvalue()}
-        data = {"top_k": top_k}
-        response = requests.post(BACKEND_URL, files=files, data=data)
-    elif image_url:
-        data = {"image_url": image_url, "top_k": top_k}
-        response = requests.post(BACKEND_URL, data=data)
-    else:
+    if not uploaded_file and not image_url:
         st.warning("Please upload an image or enter a URL.")
         st.stop()
 
-    if response.status_code == 200:
-        results = response.json()
-        st.success(f"Found {len(results['results'])} similar items!")
+    # Get image from either source
+    try:
+        if uploaded_file:
+            img_bytes = uploaded_file.getvalue()
+        else:
+            response = requests.get(image_url, timeout=10)
+            response.raise_for_status()
+            img_bytes = response.content
+        
+        query_image = _image_from_bytes(img_bytes)
+        st.subheader("Query Image")
+        st.image(query_image, width=200)
 
-        cols = st.columns(len(results["results"]))
-        for i, item in enumerate(results["results"]):
+    except Exception as e:
+        st.error(f"Could not load image. Error: {e}")
+        st.stop()
+
+    # Perform search using the local functions
+    try:
+        query_vector = _compute_embedding(query_image, model, processor)
+        indices, scores = _search_index(query_vector, index, top_k)
+
+        st.success(f"Found {len(indices)} similar items!")
+        
+        # Display results
+        cols = st.columns(len(indices))
+        for i, (idx, score) in enumerate(zip(indices, scores)):
             with cols[i]:
-                st.image(item["image_url"] or item["local_path"], use_container_width=True)
-                st.caption(f"{item['name']} ({item['category']})\n\n🔹 Score: {item['score']:.2f}")
-    else:
-        st.error(f"Error: {response.status_code}")
+                item = metadata[idx]
+                # Display image from URL if available, otherwise assume a local path needs constructing
+                # Based on your main.py, metadata contains the URL
+                if "image_url" in item and item["image_url"]:
+                     st.image(item["image_url"], use_column_width=True)
+                # Fallback for local path if needed, though your schema uses URLs
+                elif "local_path" in item and item["local_path"]:
+                     st.image(item["local_path"], use_column_width=True)
+                
+                # Default captioning
+                name = item.get('name', 'N/A')
+                category = item.get('category', 'N/A')
+                st.caption(f"{name} ({category})\n\n🔹 Score: {score:.2f}")
+
+    except Exception as e:
+        st.error(f"An error occurred during the search process. Error: {e}")
+
+# --- END: Streamlit UI ---
