@@ -12,19 +12,16 @@ import requests
 import io
 
 # --- START: All-in-One Configuration ---
-
-# Build paths relative to this script's location
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 EMBEDDINGS_DIR = os.path.join(SCRIPT_DIR, 'embeddings_output')
+DATA_DIR = os.path.join(SCRIPT_DIR, '..', 'data')
 
-# Define file paths for the model and metadata
 METADATA_PATH = os.path.join(EMBEDDINGS_DIR, 'products_metadata.json')
 FAISS_INDEX_PATH = os.path.join(EMBEDDINGS_DIR, 'index.faiss')
+IMAGES_DIR = os.path.join(DATA_DIR, 'images')
 
-# Model and device configuration
 CLIP_MODEL_NAME = "openai/clip-vit-base-patch32"
-DEVICE = "cpu" # Force CPU; Streamlit Cloud's free tier has no GPU
-
+DEVICE = "cpu"
 # --- END: Configuration ---
 
 
@@ -63,9 +60,17 @@ def _compute_embedding(img: Image.Image, model, processor) -> np.ndarray:
 
 def _search_index(vec: np.ndarray, index, top_k: int):
     """Searches the FAISS index."""
+    if vec.ndim == 1:
+        vec = vec.reshape(1, -1)
     distances, indices = index.search(vec, top_k)
     return indices[0].tolist(), distances[0].tolist()
 
+def get_image_path(product_id):
+    """Constructs the local path for a product image."""
+    str_product_id = str(product_id).zfill(10)
+    folder = str_product_id[:3]
+    return os.path.join(IMAGES_DIR, folder, f"{str_product_id}.jpg")
+    
 # --- END: Backend Logic ---
 
 
@@ -73,9 +78,8 @@ def _search_index(vec: np.ndarray, index, top_k: int):
 
 st.set_page_config(page_title="Visual Product Matcher", layout="wide")
 st.title("🖼️ Visual Product Matcher")
-st.write("Upload a product image or paste an image URL to find visually similar items.")
+st.write("Upload a product image or paste a URL to find visually similar items.")
 
-# Load models and data at the start
 try:
     index, metadata, model, processor = load_models_and_data()
 except Exception as e:
@@ -96,7 +100,6 @@ if st.button("🔍 Search"):
         st.warning("Please upload an image or enter a URL.")
         st.stop()
 
-    # Get image from either source
     try:
         if uploaded_file:
             img_bytes = uploaded_file.getvalue()
@@ -106,39 +109,27 @@ if st.button("🔍 Search"):
             img_bytes = response.content
         
         query_image = _image_from_bytes(img_bytes)
-        st.subheader("Query Image")
-        st.image(query_image, width=200)
-
     except Exception as e:
-        st.error(f"Could not load image. Error: {e}")
+        st.error(f"Failed to load image: {e}")
         st.stop()
 
-    # Perform search using the local functions
-    try:
-        query_vector = _compute_embedding(query_image, model, processor)
-        indices, scores = _search_index(query_vector, index, top_k)
+    st.subheader("Query Image:")
+    st.image(query_image, use_container_width=True) # <-- FIX IS HERE
 
-        st.success(f"Found {len(indices)} similar items!")
-        
-        # Display results
-        cols = st.columns(len(indices))
-        for i, (idx, score) in enumerate(zip(indices, scores)):
-            with cols[i]:
-                item = metadata[idx]
-                # Display image from URL if available, otherwise assume a local path needs constructing
-                # Based on your main.py, metadata contains the URL
-                if "image_url" in item and item["image_url"]:
-                     st.image(item["image_url"], use_column_width=True)
-                # Fallback for local path if needed, though your schema uses URLs
-                elif "local_path" in item and item["local_path"]:
-                     st.image(item["local_path"], use_column_width=True)
-                
-                # Default captioning
-                name = item.get('name', 'N/A')
-                category = item.get('category', 'N/A')
-                st.caption(f"{name} ({category})\n\n🔹 Score: {score:.2f}")
-
-    except Exception as e:
-        st.error(f"An error occurred during the search process. Error: {e}")
-
-# --- END: Streamlit UI ---
+    query_vector = _compute_embedding(query_image, model, processor)
+    indices, scores = _search_index(query_vector, index, top_k=top_k)
+    
+    st.subheader("Similar Items Found:")
+    results_cols = st.columns(top_k)
+    
+    for i, (idx, score) in enumerate(zip(indices, scores)):
+        with results_cols[i]:
+            item_metadata = metadata[idx]
+            item_id = item_metadata['product_id']
+            item_image_path = get_image_path(item_id)
+            
+            if os.path.exists(item_image_path):
+                st.image(item_image_path, use_container_width=True) # <-- FIX IS HERE
+                st.caption(f"ID: {item_id}\n\nScore: {score:.2f}")
+            else:
+                st.warning(f"Img not found for {item_id}")
