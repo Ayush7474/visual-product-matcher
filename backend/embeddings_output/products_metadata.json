@@ -1,0 +1,452 @@
+[
+  {
+    "id": "1",
+    "name": "Shoes 1",
+    "category": "shoes",
+    "price": 1505.91,
+    "image_url": "https://images.unsplash.com/photo-1565814636199-ae8133055c1c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MTY1MTN8MHwxfHNlYXJjaHw0fHxzaG9lc3xlbnwwfDJ8fHwxNzYwNDYyMjg2fDA&ixlib=rb-4.1.0&q=80&w=400",
+    "local_path": "data\\images\\1.jpg",
+    "description": "High quality shoes product"
+  },
+  {
+    "id": "2",
+    "name": "Shoes 2",
+    "category": "shoes",
+    "price": 809.43,
+    "image_url": "https://images.unsplash.com/photo-1543163521-1bf539c55dd2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MTY1MTN8MHwxfHNlYXJjaHwyfHxzaG9lc3xlbnwwfDJ8fHwxNzYwNDYyMjg2fDA&ixlib=rb-4.1.0&q=80&w=400",
+    "local_path": "data\\images\\2.jpg",
+    "description": "High quality shoes product"
+  },
+  {
+    "id": "3",
+    "name": "Shoes 3",
+    "category": "shoes",
+    "price": 2419.34,
+    "image_url": "https://images.unsplash.com/photo-1605034313761-73ea4a0cfbf3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MTY1MTN8MHwxfHNlYXJjaHw1fHxzaG9lc3xlbnwwfDJ8fHwxNzYwNDYyMjg2fDA&ixlib=rb-4.1.0&q=80&w=400",
+    "local_path": "data\\images\\3.jpg",
+    "description": "High quality shoes product"
+  },
+  {
+    "id": "4",
+    "name": "Shoes 4",
+    "category": "shoes",
+    "price": 4308.65,
+    "image_url": "https://images.unsplash.com/photo-1529810313688-44ea1c2d81d3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MTY1MTN8MHwxfHNlYXJjaHwzfHxzaG9lc3xlbnwwfDJ8fHwxNzYwNDYyMjg2fDA&ixlib=rb-4.1.0&q=80&w=400",
+    "local_path": "data\\images\\4.jpg",
+    "description": "High quality shoes product"
+  },
+  {
+    "id": "5",
+    "name": "Shoes 5",
+    "category": "shoes",
+    "price": 4343.97,
+    "image_url": "https://images.unsplash.com/photo-1491553895911-0055eca6402d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MTY1MTN8MHwxfHNlYXJjaHwxfHxzaG9lc3xlbnwwfDJ8fHwxNzYwNDYyMjg2fDA&ixlib=rb-4.1.0&q=80&w=400",
+    "local_path": "data\\images\\5.jpg",
+    "description": "High quality shoes product"
+  },
+  {
+    "id": "6",
+    "name": "Watches 6",
+    "category": "watches",
+    "price": 4315.08,
+    "image_url": "https://images.unsplash.com/photo-1600071177478-88758260617d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MTY1MTN8MHwxfHNlYXJjaHwyfHx3YXRjaGVzfGVufDB8Mnx8fDE3NjA0NjIyODh8MA&ixlib=rb-4.1.0&q=80&w=400",
+    "local_path": "data\\images\\6.jpg",
+    "description": "High quality watches product"
+  },
+  {
+    "id": "7",
+    "name": "Watches 7",
+    "category": "watches",
+    "price": 1511.5,
+    "image_url": "https://images.unsplash.com/photo-1617265859824-46910d1ad447?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MTY1MTN8MHwxfHNlYXJjaHwzfHx3YXRjaGVzfGVufDB8Mnx8fDE3NjA0NjIyODh8MA&ixlib=rb-4.1.0&q=80&w=400",
+    "local_path": "data\\images\\7.jpg",
+    "description": "High quality watches product"
+  },
+  {
+    "id": "8",
+    "name": "Watches 8",
+    "category": "watches",
+    "price": 538.41,
+    "image_url": "https://images.unsplash.com/photo-1687040481503-3595ef7b5672?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MTY1MTN8MHwxfHNlYXJjaHwxfHx3YXRjaGVzfGVufDB8Mnx8fDE3NjA0NjIyODh8MA&ixlib=rb-4.1.0&q=80&w=400",
+    "local_path": "data\\images\\8.jpg",
+    "description": "High quality watches product"
+  },
+  {
+    "id": "9",
+    "name": "Watches 9",
+    "category": "watches",
+    "price": 510.9,
+    "image_url": "https://images.unsplash.com/photo-1584981202081-faf15871dd0f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MTY1MTN8MHwxfHNlYXJjaHw0fHx3YXRjaGVzfGVufDB8Mnx8fDE3NjA0NjIyODh8MA&ixlib=rb-4.1.0&q=80&w=400",
+    "local_path": "data\\images\\9.jpg",
+    "description": "High quality watches product"
+  },
+  {
+    "id": "10",
+    "name": "Watches 10",
+    "category": "watches",
+    "price": 3659.4,
+    "image_url": "https://images.unsplash.com/photo-1729078946064-07a957def7af?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MTY1MTN8MHwxfHNlYXJjaHw1fHx3YXRjaGVzfGVufDB8Mnx8fDE3NjA0NjIyODh8MA&ixlib=rb-4.1.0&q=80&w=400",
+    "local_path": "data\\images\\10.jpg",
+    "description": "High quality watches product"
+  },
+  {
+    "id": "11",
+    "name": "Bags 11",
+    "category": "bags",
+    "price": 3949.25,
+    "image_url": "https://images.unsplash.com/photo-1718622795525-2295971921ba?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MTY1MTN8MHwxfHNlYXJjaHw1fHxiYWdzfGVufDB8Mnx8fDE3NjA0NjIyOTF8MA&ixlib=rb-4.1.0&q=80&w=400",
+    "local_path": "data\\images\\11.jpg",
+    "description": "High quality bags product"
+  },
+  {
+    "id": "12",
+    "name": "Bags 12",
+    "category": "bags",
+    "price": 2748.7,
+    "image_url": "https://images.unsplash.com/photo-1691480250099-a63081ecfcb8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MTY1MTN8MHwxfHNlYXJjaHwzfHxiYWdzfGVufDB8Mnx8fDE3NjA0NjIyOTF8MA&ixlib=rb-4.1.0&q=80&w=400",
+    "local_path": "data\\images\\12.jpg",
+    "description": "High quality bags product"
+  },
+  {
+    "id": "13",
+    "name": "Bags 13",
+    "category": "bags",
+    "price": 4392.08,
+    "image_url": "https://images.unsplash.com/photo-1591561954555-607968c989ab?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MTY1MTN8MHwxfHNlYXJjaHwxfHxiYWdzfGVufDB8Mnx8fDE3NjA0NjIyOTF8MA&ixlib=rb-4.1.0&q=80&w=400",
+    "local_path": "data\\images\\13.jpg",
+    "description": "High quality bags product"
+  },
+  {
+    "id": "14",
+    "name": "Bags 14",
+    "category": "bags",
+    "price": 3380.7,
+    "image_url": "https://images.unsplash.com/photo-1601992342430-9dbef88d85fc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MTY1MTN8MHwxfHNlYXJjaHw0fHxiYWdzfGVufDB8Mnx8fDE3NjA0NjIyOTF8MA&ixlib=rb-4.1.0&q=80&w=400",
+    "local_path": "data\\images\\14.jpg",
+    "description": "High quality bags product"
+  },
+  {
+    "id": "15",
+    "name": "Bags 15",
+    "category": "bags",
+    "price": 3262.32,
+    "image_url": "https://images.unsplash.com/photo-1606522754091-a3bbf9ad4cb3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MTY1MTN8MHwxfHNlYXJjaHwyfHxiYWdzfGVufDB8Mnx8fDE3NjA0NjIyOTF8MA&ixlib=rb-4.1.0&q=80&w=400",
+    "local_path": "data\\images\\15.jpg",
+    "description": "High quality bags product"
+  },
+  {
+    "id": "16",
+    "name": "Phones 16",
+    "category": "phones",
+    "price": 686.11,
+    "image_url": "https://images.unsplash.com/photo-1535882743347-fa16a8c3e48f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MTY1MTN8MHwxfHNlYXJjaHwyfHxwaG9uZXN8ZW58MHwyfHx8MTc2MDQ2MjI5M3ww&ixlib=rb-4.1.0&q=80&w=400",
+    "local_path": "data\\images\\16.jpg",
+    "description": "High quality phones product"
+  },
+  {
+    "id": "17",
+    "name": "Phones 17",
+    "category": "phones",
+    "price": 3738.99,
+    "image_url": "https://images.unsplash.com/photo-1654648662275-dfb19ec8d4a0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MTY1MTN8MHwxfHNlYXJjaHwxfHxwaG9uZXN8ZW58MHwyfHx8MTc2MDQ2MjI5M3ww&ixlib=rb-4.1.0&q=80&w=400",
+    "local_path": "data\\images\\17.jpg",
+    "description": "High quality phones product"
+  },
+  {
+    "id": "18",
+    "name": "Phones 18",
+    "category": "phones",
+    "price": 2027.2,
+    "image_url": "https://images.unsplash.com/photo-1658064830455-9829d0464d53?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MTY1MTN8MHwxfHNlYXJjaHwzfHxwaG9uZXN8ZW58MHwyfHx8MTc2MDQ2MjI5M3ww&ixlib=rb-4.1.0&q=80&w=400",
+    "local_path": "data\\images\\18.jpg",
+    "description": "High quality phones product"
+  },
+  {
+    "id": "19",
+    "name": "Phones 19",
+    "category": "phones",
+    "price": 2291.74,
+    "image_url": "https://images.unsplash.com/photo-1658064830461-086dad3291a6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MTY1MTN8MHwxfHNlYXJjaHw0fHxwaG9uZXN8ZW58MHwyfHx8MTc2MDQ2MjI5M3ww&ixlib=rb-4.1.0&q=80&w=400",
+    "local_path": "data\\images\\19.jpg",
+    "description": "High quality phones product"
+  },
+  {
+    "id": "20",
+    "name": "Phones 20",
+    "category": "phones",
+    "price": 3957.02,
+    "image_url": "https://images.unsplash.com/photo-1603184553908-507b668b96a9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MTY1MTN8MHwxfHNlYXJjaHw1fHxwaG9uZXN8ZW58MHwyfHx8MTc2MDQ2MjI5M3ww&ixlib=rb-4.1.0&q=80&w=400",
+    "local_path": "data\\images\\20.jpg",
+    "description": "High quality phones product"
+  },
+  {
+    "id": "21",
+    "name": "Laptops 21",
+    "category": "laptops",
+    "price": 617.03,
+    "image_url": "https://images.unsplash.com/photo-1729370775808-aab21a6b7039?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MTY1MTN8MHwxfHNlYXJjaHwxfHxsYXB0b3BzfGVufDB8Mnx8fDE3NjA0NjIyOTZ8MA&ixlib=rb-4.1.0&q=80&w=400",
+    "local_path": "data\\images\\21.jpg",
+    "description": "High quality laptops product"
+  },
+  {
+    "id": "22",
+    "name": "Laptops 22",
+    "category": "laptops",
+    "price": 1993.47,
+    "image_url": "https://images.unsplash.com/flagged/photo-1576697010739-6373b63f3204?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MTY1MTN8MHwxfHNlYXJjaHwyfHxsYXB0b3BzfGVufDB8Mnx8fDE3NjA0NjIyOTZ8MA&ixlib=rb-4.1.0&q=80&w=400",
+    "local_path": "data\\images\\22.jpg",
+    "description": "High quality laptops product"
+  },
+  {
+    "id": "23",
+    "name": "Laptops 23",
+    "category": "laptops",
+    "price": 4766.78,
+    "image_url": "https://images.unsplash.com/photo-1720556405438-d67f0f9ecd44?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MTY1MTN8MHwxfHNlYXJjaHw0fHxsYXB0b3BzfGVufDB8Mnx8fDE3NjA0NjIyOTZ8MA&ixlib=rb-4.1.0&q=80&w=400",
+    "local_path": "data\\images\\23.jpg",
+    "description": "High quality laptops product"
+  },
+  {
+    "id": "24",
+    "name": "Laptops 24",
+    "category": "laptops",
+    "price": 1565.91,
+    "image_url": "https://images.unsplash.com/photo-1708492671286-8c8bed2e0ed9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MTY1MTN8MHwxfHNlYXJjaHw1fHxsYXB0b3BzfGVufDB8Mnx8fDE3NjA0NjIyOTZ8MA&ixlib=rb-4.1.0&q=80&w=400",
+    "local_path": "data\\images\\24.jpg",
+    "description": "High quality laptops product"
+  },
+  {
+    "id": "25",
+    "name": "Laptops 25",
+    "category": "laptops",
+    "price": 1498.02,
+    "image_url": "https://images.unsplash.com/photo-1667058014960-b4d3c76047a2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MTY1MTN8MHwxfHNlYXJjaHwzfHxsYXB0b3BzfGVufDB8Mnx8fDE3NjA0NjIyOTZ8MA&ixlib=rb-4.1.0&q=80&w=400",
+    "local_path": "data\\images\\25.jpg",
+    "description": "High quality laptops product"
+  },
+  {
+    "id": "26",
+    "name": "Headphones 26",
+    "category": "headphones",
+    "price": 3922.98,
+    "image_url": "https://images.unsplash.com/photo-1566355800052-c1fff02fcbae?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MTY1MTN8MHwxfHNlYXJjaHwxfHxoZWFkcGhvbmVzfGVufDB8Mnx8fDE3NjA0NjIyOTl8MA&ixlib=rb-4.1.0&q=80&w=400",
+    "local_path": "data\\images\\26.jpg",
+    "description": "High quality headphones product"
+  },
+  {
+    "id": "27",
+    "name": "Headphones 27",
+    "category": "headphones",
+    "price": 4357.95,
+    "image_url": "https://images.unsplash.com/photo-1615375834706-98afda0d534f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MTY1MTN8MHwxfHNlYXJjaHwyfHxoZWFkcGhvbmVzfGVufDB8Mnx8fDE3NjA0NjIyOTl8MA&ixlib=rb-4.1.0&q=80&w=400",
+    "local_path": "data\\images\\27.jpg",
+    "description": "High quality headphones product"
+  },
+  {
+    "id": "28",
+    "name": "Headphones 28",
+    "category": "headphones",
+    "price": 837.04,
+    "image_url": "https://images.unsplash.com/photo-1624814448280-0f2d7d399b07?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MTY1MTN8MHwxfHNlYXJjaHwzfHxoZWFkcGhvbmVzfGVufDB8Mnx8fDE3NjA0NjIyOTl8MA&ixlib=rb-4.1.0&q=80&w=400",
+    "local_path": "data\\images\\28.jpg",
+    "description": "High quality headphones product"
+  },
+  {
+    "id": "29",
+    "name": "Headphones 29",
+    "category": "headphones",
+    "price": 560.32,
+    "image_url": "https://images.unsplash.com/photo-1570841398833-43e352b440ca?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MTY1MTN8MHwxfHNlYXJjaHw1fHxoZWFkcGhvbmVzfGVufDB8Mnx8fDE3NjA0NjIyOTl8MA&ixlib=rb-4.1.0&q=80&w=400",
+    "local_path": "data\\images\\29.jpg",
+    "description": "High quality headphones product"
+  },
+  {
+    "id": "30",
+    "name": "Headphones 30",
+    "category": "headphones",
+    "price": 3689.69,
+    "image_url": "https://images.unsplash.com/photo-1665152454292-f3c9384e082c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MTY1MTN8MHwxfHNlYXJjaHw0fHxoZWFkcGhvbmVzfGVufDB8Mnx8fDE3NjA0NjIyOTl8MA&ixlib=rb-4.1.0&q=80&w=400",
+    "local_path": "data\\images\\30.jpg",
+    "description": "High quality headphones product"
+  },
+  {
+    "id": "31",
+    "name": "Sunglasses 31",
+    "category": "sunglasses",
+    "price": 1679.31,
+    "image_url": "https://images.unsplash.com/photo-1508296695146-257a814070b4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MTY1MTN8MHwxfHNlYXJjaHwzfHxzdW5nbGFzc2VzfGVufDB8Mnx8fDE3NjA0NjIzMDJ8MA&ixlib=rb-4.1.0&q=80&w=400",
+    "local_path": "data\\images\\31.jpg",
+    "description": "High quality sunglasses product"
+  },
+  {
+    "id": "32",
+    "name": "Sunglasses 32",
+    "category": "sunglasses",
+    "price": 762.33,
+    "image_url": "https://images.unsplash.com/photo-1511499767150-a48a237f0083?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MTY1MTN8MHwxfHNlYXJjaHwxfHxzdW5nbGFzc2VzfGVufDB8Mnx8fDE3NjA0NjIzMDJ8MA&ixlib=rb-4.1.0&q=80&w=400",
+    "local_path": "data\\images\\32.jpg",
+    "description": "High quality sunglasses product"
+  },
+  {
+    "id": "33",
+    "name": "Sunglasses 33",
+    "category": "sunglasses",
+    "price": 3129.71,
+    "image_url": "https://images.unsplash.com/photo-1565834325413-613e8b81f716?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MTY1MTN8MHwxfHNlYXJjaHw1fHxzdW5nbGFzc2VzfGVufDB8Mnx8fDE3NjA0NjIzMDJ8MA&ixlib=rb-4.1.0&q=80&w=400",
+    "local_path": "data\\images\\33.jpg",
+    "description": "High quality sunglasses product"
+  },
+  {
+    "id": "34",
+    "name": "Sunglasses 34",
+    "category": "sunglasses",
+    "price": 1289.66,
+    "image_url": "https://images.unsplash.com/photo-1491947153227-33d59da6c448?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MTY1MTN8MHwxfHNlYXJjaHw0fHxzdW5nbGFzc2VzfGVufDB8Mnx8fDE3NjA0NjIzMDJ8MA&ixlib=rb-4.1.0&q=80&w=400",
+    "local_path": "data\\images\\34.jpg",
+    "description": "High quality sunglasses product"
+  },
+  {
+    "id": "35",
+    "name": "Sunglasses 35",
+    "category": "sunglasses",
+    "price": 3787.98,
+    "image_url": "https://images.unsplash.com/photo-1572635196237-14b3f281503f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MTY1MTN8MHwxfHNlYXJjaHwyfHxzdW5nbGFzc2VzfGVufDB8Mnx8fDE3NjA0NjIzMDJ8MA&ixlib=rb-4.1.0&q=80&w=400",
+    "local_path": "data\\images\\35.jpg",
+    "description": "High quality sunglasses product"
+  },
+  {
+    "id": "36",
+    "name": "Jackets 36",
+    "category": "jackets",
+    "price": 1040.3,
+    "image_url": "https://images.unsplash.com/photo-1631786844752-9bf7e7d6b77b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MTY1MTN8MHwxfHNlYXJjaHwyfHxqYWNrZXRzfGVufDB8Mnx8fDE3NjA0NjIzMDV8MA&ixlib=rb-4.1.0&q=80&w=400",
+    "local_path": "data\\images\\36.jpg",
+    "description": "High quality jackets product"
+  },
+  {
+    "id": "37",
+    "name": "Jackets 37",
+    "category": "jackets",
+    "price": 1931.95,
+    "image_url": "https://images.unsplash.com/photo-1757004572977-feda55efdf1d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MTY1MTN8MHwxfHNlYXJjaHw1fHxqYWNrZXRzfGVufDB8Mnx8fDE3NjA0NjIzMDV8MA&ixlib=rb-4.1.0&q=80&w=400",
+    "local_path": "data\\images\\37.jpg",
+    "description": "High quality jackets product"
+  },
+  {
+    "id": "38",
+    "name": "Jackets 38",
+    "category": "jackets",
+    "price": 2568.15,
+    "image_url": "https://images.unsplash.com/photo-1649937408746-4d2f603f91c8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MTY1MTN8MHwxfHNlYXJjaHw0fHxqYWNrZXRzfGVufDB8Mnx8fDE3NjA0NjIzMDV8MA&ixlib=rb-4.1.0&q=80&w=400",
+    "local_path": "data\\images\\38.jpg",
+    "description": "High quality jackets product"
+  },
+  {
+    "id": "39",
+    "name": "Jackets 39",
+    "category": "jackets",
+    "price": 2299.02,
+    "image_url": "https://images.unsplash.com/photo-1497340525489-441e8427c980?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MTY1MTN8MHwxfHNlYXJjaHwzfHxqYWNrZXRzfGVufDB8Mnx8fDE3NjA0NjIzMDV8MA&ixlib=rb-4.1.0&q=80&w=400",
+    "local_path": "data\\images\\39.jpg",
+    "description": "High quality jackets product"
+  },
+  {
+    "id": "40",
+    "name": "Jackets 40",
+    "category": "jackets",
+    "price": 2921.51,
+    "image_url": "https://images.unsplash.com/photo-1628663595755-c1bb818a22e0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MTY1MTN8MHwxfHNlYXJjaHwxfHxqYWNrZXRzfGVufDB8Mnx8fDE3NjA0NjIzMDV8MA&ixlib=rb-4.1.0&q=80&w=400",
+    "local_path": "data\\images\\40.jpg",
+    "description": "High quality jackets product"
+  },
+  {
+    "id": "41",
+    "name": "Bottle 41",
+    "category": "bottle",
+    "price": 4351.37,
+    "image_url": "https://images.unsplash.com/photo-1625708458528-802ec79b1ed8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MTY1MTN8MHwxfHNlYXJjaHwyfHxib3R0bGV8ZW58MHwyfHx8MTc2MDQ2MjMwOHww&ixlib=rb-4.1.0&q=80&w=400",
+    "local_path": "data\\images\\41.jpg",
+    "description": "High quality bottle product"
+  },
+  {
+    "id": "42",
+    "name": "Bottle 42",
+    "category": "bottle",
+    "price": 3901.45,
+    "image_url": "https://images.unsplash.com/photo-1598443043897-4c07cdcf442b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MTY1MTN8MHwxfHNlYXJjaHwzfHxib3R0bGV8ZW58MHwyfHx8MTc2MDQ2MjMwOHww&ixlib=rb-4.1.0&q=80&w=400",
+    "local_path": "data\\images\\42.jpg",
+    "description": "High quality bottle product"
+  },
+  {
+    "id": "43",
+    "name": "Bottle 43",
+    "category": "bottle",
+    "price": 4777.49,
+    "image_url": "https://images.unsplash.com/photo-1622428051717-dcd8412959de?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MTY1MTN8MHwxfHNlYXJjaHwxfHxib3R0bGV8ZW58MHwyfHx8MTc2MDQ2MjMwOHww&ixlib=rb-4.1.0&q=80&w=400",
+    "local_path": "data\\images\\43.jpg",
+    "description": "High quality bottle product"
+  },
+  {
+    "id": "44",
+    "name": "Bottle 44",
+    "category": "bottle",
+    "price": 4280.88,
+    "image_url": "https://images.unsplash.com/photo-1599030302844-568e71a28ce1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MTY1MTN8MHwxfHNlYXJjaHw1fHxib3R0bGV8ZW58MHwyfHx8MTc2MDQ2MjMwOHww&ixlib=rb-4.1.0&q=80&w=400",
+    "local_path": "data\\images\\44.jpg",
+    "description": "High quality bottle product"
+  },
+  {
+    "id": "45",
+    "name": "Bottle 45",
+    "category": "bottle",
+    "price": 1758.71,
+    "image_url": "https://images.unsplash.com/photo-1598443053960-0e8608b282fd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MTY1MTN8MHwxfHNlYXJjaHw0fHxib3R0bGV8ZW58MHwyfHx8MTc2MDQ2MjMwOHww&ixlib=rb-4.1.0&q=80&w=400",
+    "local_path": "data\\images\\45.jpg",
+    "description": "High quality bottle product"
+  },
+  {
+    "id": "46",
+    "name": "Wallet 46",
+    "category": "wallet",
+    "price": 2448.1,
+    "image_url": "https://images.unsplash.com/photo-1601592996763-f05c9c80a7f1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MTY1MTN8MHwxfHNlYXJjaHw0fHx3YWxsZXR8ZW58MHwyfHx8MTc2MDQ2MjMxMHww&ixlib=rb-4.1.0&q=80&w=400",
+    "local_path": "data\\images\\46.jpg",
+    "description": "High quality wallet product"
+  },
+  {
+    "id": "47",
+    "name": "Wallet 47",
+    "category": "wallet",
+    "price": 3817.58,
+    "image_url": "https://images.unsplash.com/photo-1532033375034-a29004ea9769?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MTY1MTN8MHwxfHNlYXJjaHwxfHx3YWxsZXR8ZW58MHwyfHx8MTc2MDQ2MjMxMHww&ixlib=rb-4.1.0&q=80&w=400",
+    "local_path": "data\\images\\47.jpg",
+    "description": "High quality wallet product"
+  },
+  {
+    "id": "48",
+    "name": "Wallet 48",
+    "category": "wallet",
+    "price": 3227.89,
+    "image_url": "https://images.unsplash.com/photo-1612023395494-1c4050b68647?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MTY1MTN8MHwxfHNlYXJjaHwyfHx3YWxsZXR8ZW58MHwyfHx8MTc2MDQ2MjMxMHww&ixlib=rb-4.1.0&q=80&w=400",
+    "local_path": "data\\images\\48.jpg",
+    "description": "High quality wallet product"
+  },
+  {
+    "id": "49",
+    "name": "Wallet 49",
+    "category": "wallet",
+    "price": 4194.38,
+    "image_url": "https://images.unsplash.com/photo-1619169412695-de792ce344e4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MTY1MTN8MHwxfHNlYXJjaHwzfHx3YWxsZXR8ZW58MHwyfHx8MTc2MDQ2MjMxMHww&ixlib=rb-4.1.0&q=80&w=400",
+    "local_path": "data\\images\\49.jpg",
+    "description": "High quality wallet product"
+  },
+  {
+    "id": "50",
+    "name": "Wallet 50",
+    "category": "wallet",
+    "price": 4813.62,
+    "image_url": "https://images.unsplash.com/photo-1710435846722-31ba4dc02e43?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MTY1MTN8MHwxfHNlYXJjaHw1fHx3YWxsZXR8ZW58MHwyfHx8MTc2MDQ2MjMxMHww&ixlib=rb-4.1.0&q=80&w=400",
+    "local_path": "data\\images\\50.jpg",
+    "description": "High quality wallet product"
+  }
+]
