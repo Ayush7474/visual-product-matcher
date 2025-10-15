@@ -16,20 +16,23 @@ from transformers import CLIPProcessor, CLIPModel
 import faiss
 import requests
 
-# Config
-EMBEDDINGS_DIR = Path("backend/embeddings_output")
+# --- START: Corrected Config for Deployment ---
+# In Render, the root directory is 'backend', so we look for the subfolder directly.
+EMBEDDINGS_DIR = Path("embeddings_output") 
 INDEX_PATH = EMBEDDINGS_DIR / "index.faiss"
 METADATA_PATH = EMBEDDINGS_DIR / "products_metadata.json"
+# --- END: Corrected Config ---
+
 CLIP_MODEL_NAME = "openai/clip-vit-base-patch32"
 DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
 TOP_K_DEFAULT = 5
 
 app = FastAPI(title="Visual Product Matcher API (FastAPI)")
 
-# Allow CORS from local frontend dev (adjust origin as needed)
+# Allow CORS
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # change "*" to your frontend URL in production
+    allow_origins=["*"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -77,47 +80,34 @@ def _search_index(vec: np.ndarray, top_k: int = TOP_K_DEFAULT):
     if vec.ndim == 1:
         vec = vec.reshape(1, -1)
     D, I = index.search(vec, top_k)
-    # D are inner-product scores; for normalized vectors these approximate cosine similarity
     return I[0].tolist(), D[0].tolist()
 
 @app.post("/search")
 async def search_image(file: Optional[UploadFile] = File(None), image_url: Optional[str] = Form(None), top_k: int = Form(TOP_K_DEFAULT)):
-    """
-    Accepts either:
-     - multipart form file field named 'file', or
-     - form field 'image_url' with a public URL to an image
-    Returns top-k matches with metadata and similarity scores.
-    """
     if file is None and not image_url:
         return JSONResponse({"error": "Provide either file upload or image_url"}, status_code=400)
 
-    # Get image bytes
     try:
         if file:
             img_bytes = await file.read()
         else:
-            # fetch image from URL
             resp = requests.get(image_url, timeout=10)
             resp.raise_for_status()
             img_bytes = resp.content
-
         img = _image_from_bytes(img_bytes)
     except Exception as e:
         return JSONResponse({"error": f"Failed to load image: {e}"}, status_code=400)
 
-    # Compute embedding
     try:
         vec = _compute_embedding_from_image(img)
     except Exception as e:
         return JSONResponse({"error": f"Failed to compute embedding: {e}"}, status_code=500)
 
-    # Search
     try:
         ids, scores = _search_index(vec, top_k=top_k)
     except Exception as e:
         return JSONResponse({"error": f"Search failed: {e}"}, status_code=500)
 
-    # Map to metadata (be careful with index out-of-range)
     results = []
     for idx, score in zip(ids, scores):
         if idx < 0 or idx >= len(metadata):
@@ -132,6 +122,6 @@ async def search_image(file: Optional[UploadFile] = File(None), image_url: Optio
 def health():
     return {"status": "ok", "device": DEVICE, "n_items": len(metadata)}
 
-# For quick local debugging
+# This block is ignored by Uvicorn on Render but is useful for local testing
 if __name__ == "__main__":
     uvicorn.run("backend.main:app", host="0.0.0.0", port=8000, reload=False)
