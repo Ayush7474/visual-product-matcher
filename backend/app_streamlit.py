@@ -1,6 +1,7 @@
 # backend/app_streamlit.py
 
 import streamlit as st
+import pandas as pd  # <--- THIS WAS THE MISSING LINE. MY APOLOGIES.
 from PIL import Image
 import numpy as np
 import faiss
@@ -61,8 +62,6 @@ def _search_index(vec: np.ndarray, index, top_k: int):
         vec = vec.reshape(1, -1)
     distances, indices = index.search(vec, top_k)
     return indices[0].tolist(), distances[0].tolist()
-
-# The manual get_image_path function is no longer needed.
     
 # --- END: Backend Logic ---
 
@@ -118,15 +117,12 @@ if st.button("🔍 Search"):
     for i, (idx, score) in enumerate(zip(indices, scores)):
         with results_cols[i]:
             item_metadata = df.iloc[idx]
-            # --- THIS IS THE FIX: Use 'id' and 'local_path' from your JSON file ---
             item_id = item_metadata['id'] 
-            # Build the full path to the local image file
             item_image_path = os.path.join(SCRIPT_DIR, '..', item_metadata['local_path'].replace('\\', '/'))
             
             if os.path.exists(item_image_path):
                 st.image(item_image_path, use_container_width=True)
                 st.caption(f"ID: {item_id}\n\nScore: {score:.2f}")
             else:
-                # Fallback to URL if local path fails or is not found
                 st.image(item_metadata['image_url'], use_container_width=True)
                 st.caption(f"ID: {item_id} (from URL)\n\nScore: {score:.2f}")
